@@ -193,7 +193,7 @@ class AverModels():
                 dy = model.atoms[i, 1] - griddot[1]
                 dz = model.atoms[i, 2] - griddot[2]
                 dist = dx * dx + dy * dy + dz * dz
-                add = max(1 - (dist / f), 0)
+                add = max(1 - (dist / (1.0*f)), 0)#should be 1*f but just a try with 2*f
                 if add != 0:
                     contrib += 1
                     occ += add
